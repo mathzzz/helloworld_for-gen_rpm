@@ -1,0 +1,87 @@
+$ ./gen_rpm.sh
+helloworld.spec created; type minimal, rpm version >= 4.11.
+/home/zjw/rpmbuild_test
+/home/zjw/rpmbuild_test
+Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.6YXpaq
++ umask 022
++ cd /root/rpmbuild/BUILD
++ cd /root/rpmbuild/BUILD
++ rm -rf helloworld-1.0.0
++ /usr/bin/gzip -dc /root/rpmbuild/SOURCES/helloworld-1.0.0.tar.gz
++ /usr/bin/tar -xf -
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd helloworld-1.0.0
++ /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
++ exit 0
+Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.WkzdaR
++ umask 022
++ cd /root/rpmbuild/BUILD
++ cd helloworld-1.0.0
++ make -j8
+gcc -g helloworld.c -o helloworld
++ exit 0
+Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.LZbCei
++ umask 022
++ cd /root/rpmbuild/BUILD
++ '[' /root/rpmbuild/BUILDROOT/helloworld-1.0.0-1.el7.x86_64 '!=' / ']'
++ rm -rf /root/rpmbuild/BUILDROOT/helloworld-1.0.0-1.el7.x86_64
+++ dirname /root/rpmbuild/BUILDROOT/helloworld-1.0.0-1.el7.x86_64
++ mkdir -p /root/rpmbuild/BUILDROOT
++ mkdir /root/rpmbuild/BUILDROOT/helloworld-1.0.0-1.el7.x86_64
++ cd helloworld-1.0.0
++ echo rm -rf /root/rpmbuild/BUILDROOT/helloworld-1.0.0-1.el7.x86_64
+rm -rf /root/rpmbuild/BUILDROOT/helloworld-1.0.0-1.el7.x86_64
++ /usr/lib/rpm/find-debuginfo.sh --strict-build-id -m --run-dwz --dwz-low-mem-die-limit 10000000 --dwz-max-die-limit 110000000 /root/rpmbuild/BUILD/helloworld-1.0.0
+/usr/lib/rpm/sepdebugcrcfix: Updated 0 CRC32s, 0 CRC32s did match.
++ '[' '%{buildarch}' = noarch ']'
++ QA_CHECK_RPATHS=1
++ case "${QA_CHECK_RPATHS:-}" in
++ /usr/lib/rpm/check-rpaths
++ /usr/lib/rpm/check-buildroot
++ /usr/lib/rpm/redhat/brp-compress
++ /usr/lib/rpm/redhat/brp-strip-static-archive /usr/bin/strip
++ /usr/lib/rpm/brp-python-bytecompile /usr/bin/python 1
++ /usr/lib/rpm/redhat/brp-python-hardlink
++ /usr/lib/rpm/redhat/brp-java-repack-jars
+Processing files: helloworld-1.0.0-1.el7.x86_64
+Provides: helloworld = 1.0.0-1.el7 helloworld(x86-64) = 1.0.0-1.el7
+Requires(rpmlib): rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1 rpmlib(CompressedFileNames) <= 3.0.4-1
+Processing files: helloworld-debuginfo-1.0.0-1.el7.x86_64
+Provides: helloworld-debuginfo = 1.0.0-1.el7 helloworld-debuginfo(x86-64) = 1.0.0-1.el7
+Requires(rpmlib): rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1 rpmlib(CompressedFileNames) <= 3.0.4-1
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /root/rpmbuild/BUILDROOT/helloworld-1.0.0-1.el7.x86_64
+Wrote: /root/rpmbuild/SRPMS/helloworld-1.0.0-1.el7.src.rpm
+Wrote: /root/rpmbuild/RPMS/x86_64/helloworld-1.0.0-1.el7.x86_64.rpm
+Wrote: /root/rpmbuild/RPMS/x86_64/helloworld-debuginfo-1.0.0-1.el7.x86_64.rpm
+Executing(%clean): /bin/sh -e /var/tmp/rpm-tmp.xgFKe3
++ umask 022
++ cd /root/rpmbuild/BUILD
++ cd helloworld-1.0.0
++ /usr/bin/rm -rf /root/rpmbuild/BUILDROOT/helloworld-1.0.0-1.el7.x86_64
++ exit 0
+/home/zjw/rpmbuild_test
+/root/rpmbuild/
+├── BUILD
+│   └── helloworld-1.0.0
+│       ├── debugfiles.list
+│       ├── debuglinks.list
+│       ├── debugsources.list
+│       ├── elfbins.list
+│       ├── helloworld
+│       ├── helloworld.c
+│       └── Makefile
+├── BUILDROOT
+├── RPMS
+│   └── x86_64
+│       ├── helloworld-1.0.0-1.el7.x86_64.rpm
+│       └── helloworld-debuginfo-1.0.0-1.el7.x86_64.rpm
+├── SOURCES
+│   └── helloworld-1.0.0.tar.gz
+├── SPECS
+│   ├── helloworld.spec
+│   └── helloworld.spec.raw
+└── SRPMS
+    └── helloworld-1.0.0-1.el7.src.rpm
+
+8 directories, 13 files
